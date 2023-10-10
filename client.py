@@ -50,6 +50,7 @@ def recieve():
         thread = threading.Thread(target=handle, args =(client,))
         thread.start()
 
+#man, i am adding this comment literally just to test if git works and thats it lmao. 
 
 recieve()
 
