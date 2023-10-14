@@ -14,9 +14,6 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1) 
 
 # checks whether sufficient arguments have been provided 
-if len(sys.argv) != 3: 
-	print ("Correct usage: script, IP address, port number")
-	exit() 
 
 # takes the first argument from command prompt as IP address 
 IP_address = str("0.0.0.0") 
