@@ -1,7 +1,7 @@
 import socket
 
 def start_client():
-    server_ip = "SERVER_PUBLIC_IP"  # Replace with the public IP of your server
+    server_ip = "69.118.154.76"  # Replace with the public IP of your server
     server_port = 12345             # Make sure it's the same port as in the server
 
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
