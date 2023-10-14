@@ -19,10 +19,10 @@ if len(sys.argv) != 3:
 	exit() 
 
 # takes the first argument from command prompt as IP address 
-IP_address = str(sys.argv[1]) 
+IP_address = str("0.0.0.0") 
 
 # takes second argument from command prompt as port number 
-Port = int(sys.argv[2]) 
+Port = int(8081) 
 
 """ 
 binds the server to an entered IP address and at the 
