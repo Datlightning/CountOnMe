@@ -19,7 +19,7 @@ server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 IP_address = str("0.0.0.0") 
 
 # takes second argument from command prompt as port number 
-Port = int(8081) 
+Port = int(12348) 
 
 """ 
 binds the server to an entered IP address and at the 
