@@ -38,6 +38,8 @@ TODO: Error Catching: What happens when the networking is poor? Need to create a
 async def recieveGcs(): 
      async with websockets.connect(ConnectGcUrl) as web: 
          print("we have started the function")  
+         
+         # These print statements are really just for debugging
 
          js = ('{"action":"requestChat"}')
          await web.send(js)
@@ -77,6 +79,9 @@ TODO: Error catching. What about poor networking issues? W do not have a fail sa
 async def sendMessage(message): 
     asyncio.get_event_loop().run_until_complete(connectMain()) 
     async with websockets.connect(ConnectGcUrl) as web: 
+         
+        # These print statements are really just for debugging
+
         print("we have started the send message function") 
         print("this is the message that we will send" + message) 
 
