@@ -1,0 +1,37 @@
+# The name of the groupchat will be the groupchat Id because that is the easiest way to do this. 
+
+# 1st line: A stringified list of the members (USERIDS of the groupchat) 
+
+ex. 
+
+["User1", "User2", "User3", "..."]
+
+# 2nd line: The date of groupchat CREATION: PROVIDED AGAIN AS A STRINGIFIED TUPLES 
+
+ex. 
+
+(12,3,2023) 
+
+THEN: FOR EVERY MESSAGE: 
+
+The order shall go as shown: 
+
+First line: message content
+Second line: UserId of person who sent the message
+Third Line: the time the message was sent. Time will be in EST so that @ShreyasAngadi has to deal with it and not me. 
+
+ex. 
+
+Hello!
+User1
+((12,3,2023), (9,35,"pm"))
+
+# Note: 
+
+# The Date and time are provided as stringified TUPLES: 
+# This is for connection with potential future APIs or external programs. Why send in as a python time object when that does not translate to java. 
+# Reason for no lists is rather simple, our date and time ned not be mutable there is no reason to modify this data after it is originally written. 
+# Not to mention the size will never change. 
+# Not only is this a failsafe to guard against poor code written by me and Vihas, it also takes less storage to process a tuple. 
+
+# Low level memory saves like these will reduce costs significantly. The whole is greater than the sum of its parts. 
