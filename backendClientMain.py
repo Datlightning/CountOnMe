@@ -27,16 +27,17 @@ async def connectMain():
 
 async def recieveGcs(): 
      async with websockets.connect(ConnectGcUrl) as web: 
-         
+         print("we have started the function")  
 
          js = ('{"action":"requestChat"}')
          await web.send(js)
-
+         print("we have sent the first request") 
          run = True
+         print("beggining the loop")
          while run: 
-            
+             
              name = await web.recv()
-            
+             print("this is the name: " + name) 
              f = open(name, "a") 
 
              message = await web.recv() 
