@@ -5,7 +5,7 @@ import time
 
 
 ConnectGcUrl = wss.wssGcUrl()
-
+ConnectMainUrl = wss.wssConnectUrl
 
 """
 
@@ -61,7 +61,7 @@ async def recieveGcs():
              message = await web.recv()
              if (message == "CLOSECLOSECLOSE"): 
                  break
-        exit()
+         exit()
 
 """
 
