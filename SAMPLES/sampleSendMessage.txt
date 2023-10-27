@@ -1,0 +1,6 @@
+The send message dictionary should have three values
+
+message
+user 
+time
+
