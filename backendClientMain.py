@@ -50,7 +50,7 @@ async def recieveGcs():
              
              name = await web.recv()
              print("this is the name: " + name) 
-             f = open(name, "a") 
+             f = open(name , "a") 
 
              message = await web.recv() 
              print(message) 
@@ -81,7 +81,7 @@ async def sendMessage(message):
     async with websockets.connect(ConnectGcUrl) as web: 
          
         # These print statements are really just for debugging
-
+        
         print("we have started the send message function") 
         print("this is the message that we will send" + message) 
 
