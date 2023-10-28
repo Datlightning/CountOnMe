@@ -77,7 +77,6 @@ TODO: Error catching. What about poor networking issues? We do not have a fail s
 
 
 async def sendMessage(message, name, groupchatId): 
-    asyncio.get_event_loop().run_until_complete(connectMain()) 
     async with websockets.connect(ConnectGcUrl) as web: 
          
         # These print statements are really just for debugging
@@ -87,6 +86,19 @@ async def sendMessage(message, name, groupchatId):
         print("this is the username we will send it from" + " " + name)
         js = ('{"action":"sendMessage", "message":"' + message + '", "name":"' + name + '", "time":"'+ str(datetime.datetime.now()) + '"}')
         await web.send(js)
+
+"""
+
+Always run recieve is a function that will always be running to keep the text files updated as the messages are recieved. 
+
+
+"""
+
+
+async def alwaysRunReceive():
+    async with websockets.connect(ConnectGcUrl):
+        pass
+        # Print Statements are for Debugging purposes. 
 
 
         
