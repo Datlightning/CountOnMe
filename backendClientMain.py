@@ -4,6 +4,7 @@ import wss
 import datetime
 
 
+
 ConnectGcUrl = wss.wssGcUrl()
 ConnectMainUrl = wss.wssConnectUrl
 
@@ -84,8 +85,13 @@ async def sendMessage(message, name, groupchatId):
         print("we have started the send message function") 
         print("this is the message that we will send" + message) 
         print("this is the username we will send it from" + " " + name)
-        js = ('{"action":"sendMessage", "message":"' + message + '", "name":"' + name + '", "time":"'+ str(datetime.datetime.now()) + '"}')
-        await web.send(js)
+        sendValue = ('{"action":"sendMessage", "message":"' + message + '", "name":"' + name + '", "time":"'+ str(datetime.datetime.now()) + ',"groupchatId":"' + groupchatId + '"' +'}')
+        
+        await web.send(sendValue)
+        print(sendValue)
+
+        # print statement is placed after method call for a reason: 
+        # if the sendValue variable is printed, then this means that it was sent as well. 
 
 """
 
@@ -96,15 +102,47 @@ Always run recieve is a function that will always be running to keep the text fi
 
 
 async def alwaysRunReceive():
-    async with websockets.connect(ConnectGcUrl):
-        pass
-        # Print Statements are for Debugging purposes. 
+    async with websockets.connect(ConnectGcUrl) as web:
+        # We want this code to be eternally running. Every message that is sent during the time of the app's opening should be immediately written to the groupchats. 
+        while True: 
+            print("Initializing run function.")
+
+            # asyncio.wait_for basically is the same thing as an await call but instead of awaiting forever, it has a timeout. 
+
+            message = await web.recv()
+            message = json.loads(message)
+            f = open(message["groupchatId"], "a")
+            f.write(message["message"])
+            f.write(message["user"])
+            f.write(message["time"])
+            f.close()
+            print(message)
+            # Print Statements are for Debugging purposes. 
 
 
-        
+# We want these two functions to run at the same time, on different threads, asynchronously, because networking. 
+
+"""
+
+The whole concept of asynchronous code can seem complicated, but what helped me was this stack overflow thread. 
+https://stackoverflow.com/questions/748175/asynchronous-vs-synchronous-execution-what-is-the-difference#748189
+
+"""
+
+"""
+
+Threading is not psosible so I am manually just switching in between the tasks over and over again. 
+This is a terrible practice, but it is also 11:17 pm on a Friday Night. I am ready to quit life. Please. 
+
+TODO: Make this more efficient man. 
+
+TODO: Figure out how to optimize this stuff in a singular thread. Potentially time.sleep()s? 
+
+"""
 
 
-asyncio.get_event_loop().run_until_complete(sendMessage("hello", "hello"))
+async def main():
+    await asyncio.gather(alwaysRunReceive(), sendMessage("hello", "Ruthvik", "hey"))
 
-
-
+while True: 
+    asyncio.run(main())
