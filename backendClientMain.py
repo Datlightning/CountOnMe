@@ -1,7 +1,7 @@
 import websockets, json
 import asyncio
 import wss
-import time
+import datetime
 
 
 ConnectGcUrl = wss.wssGcUrl()
@@ -61,34 +61,38 @@ async def recieveGcs():
              message = await web.recv()
              if (message == "CLOSECLOSECLOSE"): 
                  break
-         exit()
+
 
 """
 
 The sendMessage function will send a message to the database (the Amazon s3 bucket) 
 @param: Message: String value: What message are you trying to send? 
 @param: groupchat: String value: What groupchat are you trying to send? 
-
+@param: name: Userid that will send the function. TODO: Delete this later as it is really only useful for testing. 
 The result of the function should be that the message is sent and updated to the groupchat bucket. In addition, it will be sent out to every user BESIDES this user. 
 
-TODO: Error catching. What about poor networking issues? W do not have a fail safe for that. 
+TODO: Error catching. What about poor networking issues? We do not have a fail safe for that. 
 
 """
 
 
-async def sendMessage(message): 
+async def sendMessage(message, name, groupchatId): 
     asyncio.get_event_loop().run_until_complete(connectMain()) 
     async with websockets.connect(ConnectGcUrl) as web: 
          
         # These print statements are really just for debugging
-        
+
         print("we have started the send message function") 
         print("this is the message that we will send" + message) 
+        print("this is the username we will send it from" + " " + name)
+        js = ('{"action":"sendMessage", "message":"' + message + '", "name":"' + name + '", "time":"'+ str(datetime.datetime.now()) + '"}')
+        await web.send(js)
+
 
         
 
 
-asyncio.get_event_loop().run_until_complete(recieveGcs())
+asyncio.get_event_loop().run_until_complete(sendMessage("hello", "hello"))
 
 
 
