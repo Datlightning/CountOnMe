@@ -141,8 +141,6 @@ TODO: Figure out how to optimize this stuff in a singular thread. Potentially ti
 """
 
 
-async def main():
-    await asyncio.gather(alwaysRunReceive(), sendMessage("hello", "Ruthvik", "hey"))
-
-while True: 
-    asyncio.run(main())
+loop = asyncio.get_event_loop()
+loop.run_until_complete(alwaysRunReceive())
+asyncio.run(sendMessage(sendMessage("hello", "Ruthvik", "hey")))
