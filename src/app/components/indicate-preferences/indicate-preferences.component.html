@@ -1,0 +1,12 @@
+<!--component html goes here -->
+<div class = "parent">
+    <div class="container">
+        <div *ngFor="let pref of preferences" class="preference">
+            <div [ngClass]="{'bg-success': pref.selected}" (click)="updatePref(pref)" class="card">
+                {{pref.name}}</div>
+        </div>
+    </div>
+    <div class="submit">
+        <button (click) = "sendPreferences()" class="btn btn-primary large">Save Your Preferences</button>
+    </div>
+</div>

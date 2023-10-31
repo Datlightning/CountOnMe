@@ -1,0 +1,51 @@
+@import "../../../styles/variables.scss";
+
+// component css goes here
+.preference{
+    margin: auto;
+    
+}
+.submit{
+    margin-right:auto;
+    margin-left:auto;
+    margin-top: 20px;
+}
+.large{
+    font: 2em $font-family;
+}
+
+.parent{
+    display: flex;
+    flex-direction: column;
+}
+.preference>* {
+    padding: 10px;
+    margin: 5px;
+    min-width: 100px;
+}
+
+.card:hover {
+    border-color: $off-white
+}
+.selected-preference{
+    background-color: $primary;
+}
+
+.card {
+    width: 144px;
+    height: 144px;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: $not-exactly-black;
+    border-radius: 10px;
+    border-style: ridge;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 600px;
+    min-height: 100px;
+    padding: 25px;
+}

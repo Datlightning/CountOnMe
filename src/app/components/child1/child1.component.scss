@@ -1,0 +1,41 @@
+@import "../../../styles/variables.scss";
+// component css goes here
+.main-window{
+    flex-direction:column;
+    // max-height: 610px;
+    background-color: $not-exactly-black;
+    margin: 10px;
+    border-radius: 30px;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+.groups{
+    flex: 1;
+    // max-height: 800px;
+    background-color: $not-exactly-black;
+    margin: 10px;
+    border-radius: 30px;
+}
+h3{
+    margin:10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font: 2em $font-family;
+
+}
+#full-span{
+    font: 1em $font-family;
+    width: 90%;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-transform: capitalize;
+}
+.group-chats{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 97vw;
+}
+group-chat{
+    flex: 5;
+}

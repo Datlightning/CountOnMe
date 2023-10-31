@@ -1,0 +1,34 @@
+<!--component html goes here -->
+<div class="row">
+    <div class="col-sm-2 col-md-3 col-lg-4"></div>
+
+    <div class="col-sm-8 col-md-6 col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <form #loginForm>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input class="form-control" [(ngModel)]="username" name="username" /><br>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input class="form-control" [(ngModel)]="password" type="password" name="password" /><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Re-enter Your Password</label>
+                        <input class="form-control" [(ngModel)]="passwordSecond" type="password" name="password" /><br>
+                    </div>
+
+                    <div class="form-action">
+                        <button class="btn btn-primary" (click)="onSignIn()">Sign Up</button>
+                        <div class="text-danger error" *ngIf="error">{{error}}</div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-2 col-md-3 col-lg-4"></div>
+</div>

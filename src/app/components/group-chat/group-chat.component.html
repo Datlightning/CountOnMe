@@ -1,0 +1,16 @@
+<!--component html goes here -->
+<div class = "gc-body">
+    <h2>{{ groupchat?.groupchatId }}</h2>
+    <div class="messages">
+        <div *ngFor = "let msg of groupchat?.messages" class = "chat">
+            <div class = "time"><span><strong>{{msg.sender}}</strong></span><span><small class = 'text-muted'> {{msg.date}} at {{msg.time}} </small></span></div>
+            <div  class = "message">{{msg.message}}</div>
+        </div>
+    </div>    
+    <div class="send">
+        <form>
+            <input [(ngModel)] = "message" (keyup.enter) = "sendMessage()" type="text" name="message" autocomplete="off" placeholder="Send Message To {{groupchat?.groupchatId}}"/>
+        </form>
+    </div>
+</div>
+

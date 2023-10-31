@@ -1,0 +1,12 @@
+@import "../styles/variables.scss";
+
+.count-on-me {
+    min-width: 320px;
+}
+
+h1 {
+    font: 4.1em $font-family;
+    min-height:100px;
+    margin:auto;
+    padding: 10px;
+}

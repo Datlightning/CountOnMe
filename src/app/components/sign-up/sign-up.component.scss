@@ -1,0 +1,27 @@
+// component css goes here
+@import "../../../styles/variables.scss";
+
+.card {
+    margin-top: 24px
+    
+}
+.row{
+    margin:auto;
+}
+form {
+    label {
+        padding-bottom: 6px;
+        font: 2em $font-family;
+
+    }
+
+    .form-action {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+
+    }
+    .error {
+        padding-bottom: 6px;
+    }
+}

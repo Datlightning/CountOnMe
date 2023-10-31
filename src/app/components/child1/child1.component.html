@@ -1,0 +1,13 @@
+<!--component html goes here -->
+<div class="group-chats">
+    <div class="groups">
+        <h3 class="text-primary text-center" >Group Chats</h3>
+        <div class="main-window">
+            <div *ngFor="let gc of groupchats">
+                <button (click) = "onGroupChatSelected(gc)" class="btn btn-primary" id="full-span">{{ gc.groupchatId }}</button>
+                <br><br>
+            </div>
+        </div>
+    </div>
+    <group-chat [groupchat]="groupchat"></group-chat>
+</div>

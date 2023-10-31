@@ -1,0 +1,75 @@
+// component css goes here
+@import "../../../styles/variables.scss";
+.gc-body{
+    background-color:rgb(38, 38, 38) ;
+    // height: 640px;
+    height: calc(100vh - 120px);
+    // width: 1600px;
+    position:relative;
+    margin: 10px;
+    border-radius: 30px;
+    padding: 15px 12px;
+
+}
+.send{
+    background-color:$not-exactly-black;
+    margin: 12px;
+    border-radius: 10px;
+    width:calc(100% - 24px);
+    height: 50px;
+    position: absolute;
+    bottom:0px;
+    left: 1px;
+    z-index:9999;
+    form{
+        label{
+            color: $secondary;
+            margin-right: 10px;
+            margin-left: 10px;
+            font: 2em $font-family;
+        }
+        input[type=text] {
+            margin: 10px;
+            padding: 2.5px;
+            border-style: hidden;
+            width: 90%;
+            background-color: $not-exactly-black;
+            opacity: 1;
+            transition: all .1s ease-in;
+            border-width: 0px;
+            border-color: $not-exactly-black;
+        }
+        input[type=text]:focus{
+            border-color: $not-exactly-black;
+            border-width: 0px;
+            outline-width: 0;
+        }
+    }
+}
+
+// .chat{
+//     overflow-y:auto;
+//     overflow-x:hidden;
+//     // max-height: 90%;
+//     // position:sticky;
+//     top:0px;
+    
+
+// }
+.chat> * {
+    margin: 10px 0;
+}
+.message{
+    background-color: $primary;
+    color: $not-exactly-black;
+    border-radius: 30px;
+    padding: 10px;
+}
+.messages{
+    height: calc(100vh - 250px);
+    overflow-y: auto;
+}
+
+h2 {
+    text-transform: capitalize;
+}

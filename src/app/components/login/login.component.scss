@@ -1,0 +1,33 @@
+@import "../../../styles/variables.scss";
+
+.card {
+    margin-top: 24px;
+    box-shadow: 5px 5px 5px black;
+    
+    
+}
+.row{
+    margin:auto;
+}
+form {
+    label {
+        padding-bottom: 6px;
+        font: 2em $font-family;
+
+    }
+
+    .form-action {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+    }
+    .error {
+        padding-bottom: 6px;
+    }
+}
+.center{
+    margin:auto;
+
+}
