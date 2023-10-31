@@ -1,6 +1,16 @@
 // component css goes here
 @import "../../../styles/variables.scss";
 
+.LogoTop { 
+    font: 4.1em; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 100px;
+    font-weight: 700;
+    text-align: center;
+    margin: 75px;
+
+}
+
 .card {
     margin-top: 24px
     

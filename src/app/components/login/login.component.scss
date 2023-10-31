@@ -2,14 +2,28 @@
 
 .card {
     margin-top: 24px;
-    box-shadow: 5px 5px 5px black;
-    
-    
+    box-shadow: 5px 5px 5px rgb(0, 0, 0);   
 }
+
 .row{
     margin:auto;
 }
+
+.usernamePassword {
+    padding-bottom: 6px; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 25px; 
+    color:rgb(192, 192, 192);
+    
+
+
+}
+
+
+
+
 form {
+
     label {
         padding-bottom: 6px;
         font: 2em $font-family;

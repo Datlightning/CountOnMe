@@ -4,9 +4,22 @@
     min-width: 320px;
 }
 
-h1 {
-    font: 4.1em $font-family;
-    min-height:100px;
-    margin:auto;
-    padding: 10px;
+
+
+.LogoTop { 
+    font: 4.1em; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 100px;
+    font-weight: 700;
+    text-align: center;
+    margin: 75px;
+
 }
+
+
+// h1 {
+//     font: 4.1em $font-family;
+//     min-height:100px;
+//     margin:auto;
+//     padding: 10px;
+// }
