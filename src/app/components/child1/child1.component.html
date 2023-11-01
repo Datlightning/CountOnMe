@@ -2,15 +2,15 @@
 <div class="group-chats">
   <div class="groups">
     <div class="main-window">
+      <div class="centered-text">Group Chats</div>
       <div *ngFor="let gc of groupchats">
         <button
           (click)="onGroupChatSelected(gc)"
-          class="btn btn-primary"
+          class="button-item"
           id="full-span"
         >
           {{ gc.groupchatId }}
         </button>
-        <br /><br />
       </div>
     </div>
   </div>
