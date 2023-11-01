@@ -1,38 +1,107 @@
 @import "../../../styles/variables.scss";
 // component css goes here
-.main-window{
-    flex-direction:column;
-    // max-height: 610px;
-    background-color: $not-exactly-black;
-    margin: 10px;
-    border-radius: 30px;
-    overflow-y:auto;
-    overflow-x:hidden;
+.main-window {
+  flex-direction: column;
+  max-height: 100vh;
+  background-color: $not-exactly-black;
+  overflow-y: auto;
+  overflow-x: hidden;
+  gap: 4px;
 }
-.groups{
-    flex: 1;
-    background-color: $not-exactly-black;
-    margin-left: 0px;
-    border-radius: 10px;
-}
-h3{
-    margin:10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font: 2em $font-family;
 
+.groups {
+  width: 200px;
+  background-color: $not-exactly-black;
 }
-#full-span{
-    font: 1em $font-family;
-    width: 90%;
-    margin-right: 10px;
-    margin-left: 10px;
-    text-transform: capitalize;
+h3 {
+  margin: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font: 2em $font-family;
 }
-.group-chats{
-    display: flex;
-    flex-direction: row;
+#full-span {
+  font: 1em $font-family;
+  width: 90%;
+  margin-right: 10px;
+  margin-left: 10px;
+  text-transform: capitalize;
 }
-group-chat{
-    flex: 5;
+.group-chats {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+}
+group-chat {
+  flex: 5;
+}
+
+/* Style the scrollbar */
+.main-window::-webkit-scrollbar {
+  width: 6px; /* Set the width of the scrollbar */
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+.main-window::-webkit-scrollbar-thumb {
+  background-color: #1a1b1e; /* Color of the thumb */
+  border: 0px; /* Border around the thumb */
+}
+
+.centered-text {
+  text-align: center;
+  padding-right: 4px;
+  padding-left: 4px;
+  padding-top: 4px;
+  padding-bottom: 0px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 20px;
+}
+
+.button-item {
+  padding: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-top: 0px;
+  background-color: $not-exactly-black; /* Example button style */
+  color: #fff; /* Example text color */
+  border: none; /* Remove button border */
+  cursor: pointer; /* Add a pointer cursor for buttons */
+  text-align: left;
+  align-items: center;
+}
+
+.active-button {
+  padding: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-top: 0px;
+  background-color: #404249; /* Example button style */
+  color: #fff; /* Example text color */
+  border: none; /* Remove button border */
+  cursor: pointer; /* Add a pointer cursor for buttons */
+  text-align: left;
+  align-items: center;
+}
+
+.button-item:hover {
+  background-color: #36373c;
+}
+
+.button-item:focus,
+.button-item:focus-visible,
+.active-button:focus,
+.active-button:focus-visible {
+  background-color: #404249;
+  outline: 0px;
+}
+
+.button-text {
+  padding: 4px;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
