@@ -13,6 +13,7 @@ import { WebsocketService } from "src/app/services/websocket-service";
 })
 export class GroupChatComponent implements OnDestroy {
   subscription: Subscription;
+  
   constructor(
     private wsService: WebsocketService,
   ) {
@@ -26,7 +27,6 @@ export class GroupChatComponent implements OnDestroy {
   @Input() groupchat: any = {};
   message: string = "";
   sendMessage() {
-    console.log("we have arrived")
     const data = {
       "action": "sendMessage",
       "username": this.wsService.user,

@@ -1,18 +1,22 @@
 <!--component html goes here -->
 <div class="group-chats">
-  <div class="groups">
-    <div class="main-window">
-      <div class="centered-text">Group Chats</div>
-      <div *ngFor="let gc of groupchats">
-        <button
-          (click)="onGroupChatSelected(gc)"
-          class="button-item"
-          id="full-span"
-        >
-          {{ gc.groupchatId }}
-        </button>
-      </div>
+    <div class="groups">
+        <div class="centered-text">Group Chats</div>
+        <div class="main-window">
+            <div *ngFor="let gc of groupchats">
+                <button
+                  (click)="onGroupChatSelected(gc)"
+                  class="button-item"
+                  id="full-span"
+                >
+                  {{ gc.groupchatId }}
+                </button>
+              </div>
+            
+        </div>
+        <div class="createGc">
+            <button [disabled]="running" (click) = "createGc()" class="btn btn-primary" id="full-span">Search For GroupChats</button>
+        </div>
     </div>
-  </div>
-  <group-chat [groupchat]="groupchat"></group-chat>
+    <group-chat [groupchat]="groupchat"></group-chat>
 </div>

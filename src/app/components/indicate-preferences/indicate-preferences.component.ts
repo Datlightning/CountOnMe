@@ -19,8 +19,8 @@ export class IndicatePreferencesComponent {
   subscription: Subscription;
   preferences: any[] = [
     { name: "Addictions", selected: false },
-    { name: "Thing1", selected: false },
-    { name: "Thing2", selected: false },
+    { name: "Depression", selected: false },
+    { name: "The Big Sad", selected: false },
     { name: "Thing3", selected: false },
     { name: "Thing4", selected: false },
     { name: "Thing4", selected: false },
@@ -44,10 +44,14 @@ export class IndicatePreferencesComponent {
     this.subscription = this.subject.subscribe(
       (response: any) => {
         if (response && response.result === "Invalid Password/Username") this.error = response.result;
-        else {
+        else if(response.result === "success"){
           this.wsService.signedIn = true;
+          this.wsService.signingUp = false;
           this.router.navigateByUrl("/main");
 
+        }
+        else{
+          console.log(response);
         }
       },
       (error: any) => console.log("error", error),
@@ -72,8 +76,10 @@ export class IndicatePreferencesComponent {
     const addProblems = {
         action: "addProblems",
         username: this.wsService.user,
-        preferences: this.userPreferences,
+        problems: this.userPreferences
     }
+    console.log(this.userPreferences);
+    console.log(this.wsService.user);
     this.subject.subscribe();
     this.subject.next(addProblems);
 

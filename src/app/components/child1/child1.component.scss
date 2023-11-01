@@ -2,7 +2,7 @@
 // component css goes here
 .main-window {
   flex-direction: column;
-  max-height: 100vh;
+  max-height: calc(100vh - 120px);
   background-color: $not-exactly-black;
   overflow-y: auto;
   overflow-x: hidden;
@@ -10,7 +10,7 @@
 }
 
 .groups {
-  width: 200px;
+  width: 250px;
   background-color: $not-exactly-black;
 }
 h3 {
@@ -105,3 +105,14 @@ group-chat {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
 }
+
+.createGc{
+    position: absolute;
+    bottom:24px;
+    left:5px;
+    width:25vh;
+    display: flex;
+    justify-content: center;
+}
+
+  
