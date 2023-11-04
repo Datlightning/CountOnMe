@@ -35,7 +35,7 @@
     width: 144px;
     height: 144px;
     justify-content: center;
-    align-items: center;
+    text-align: center;
 }
 
 .container {
@@ -45,7 +45,11 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    max-width: 600px;
+    max-width: 800px;
     min-height: 100px;
     padding: 25px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
 }

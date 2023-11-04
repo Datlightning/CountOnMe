@@ -3,7 +3,7 @@ import { Subscription } from "rxjs";
 import { WebsocketService } from "src/app/services/websocket-service";
 
 /*
- * Child1 component
+ * Retrieving Group Chat Information From the Websocket API
  */
 
 @Component({
@@ -37,10 +37,7 @@ export class Child1Component implements OnDestroy {
               this.problemNames[name] = 1;
 
             }
-            console.log("problem names", this.problemNames);
             this.groupchats.push(response);
-          }else if(response.final === "True"){
-            // this.running = false;
           }
         }else{
           const currentChat = this.groupchats.find((gc) => gc.groupchatId === response.groupchatId)
@@ -62,6 +59,7 @@ export class Child1Component implements OnDestroy {
       action: "requestGc",
       username: this.wsService.user
     }
+    this.problemNames = {};
     this.wsService.subject.next(requestGcs);
   }
   createGc(){

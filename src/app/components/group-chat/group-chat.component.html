@@ -1,6 +1,6 @@
 <!--component html goes here -->
 <div class = "gc-body">
-    <h2>{{ groupchat?.name}}</h2>
+    <h1>{{ groupchat?.name}}</h1>
     <div class="messages">
         <div *ngFor = "let msg of groupchat?.messages" class = "chat">
             <div class = "time"><span><strong>{{msg.sender}}</strong></span><span><small class = 'text-muted'> {{msg.date}} at {{msg.time}} </small></span></div>

@@ -13,12 +13,16 @@ export class SignUpComponent implements OnDestroy {
     error: string = "";
     successMessage: string = "";
     subject: any;
-    subscription: Subscription;
+    subscription: any;
     constructor(
         private router: Router,
         private wsService: WebsocketService,
 
     ) {
+        
+    }
+    connect(){
+        this.wsService.subject =webSocket("wss://9ycacmaxnh.execute-api.us-east-1.amazonaws.com/add-problems/");
         this.subject = this.wsService.subject;
         this.subscription = this.subject.subscribe(
             (response: any) => {
@@ -41,6 +45,8 @@ export class SignUpComponent implements OnDestroy {
     passwordSecond: string = "";
 
     onSignIn() {
+        
+        this.connect()
         if(this.password != this.passwordSecond){
           this.error = "Passwords Do Not Match."
           return;

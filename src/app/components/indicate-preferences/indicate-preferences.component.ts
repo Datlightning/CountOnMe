@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnDestroy } from "@angular/core";
 import { Router } from "@angular/router";
 import { Subscription } from "rxjs/internal/Subscription";
 import { WebsocketService } from "src/app/services/websocket-service";
@@ -12,24 +12,16 @@ import { WebsocketService } from "src/app/services/websocket-service";
   templateUrl: './indicate-preferences.component.html',
   styleUrls: ['./indicate-preferences.component.scss']
 })
-export class IndicatePreferencesComponent {
+export class IndicatePreferencesComponent implements OnDestroy{
   error: string = "";
   successMessage: string = "";
   subject: any;
   subscription: Subscription;
   preferences: any[] = [
-    { name: "Addictions", selected: false },
+    { name: "Drug Addictions", selected: false },
     { name: "Depression", selected: false },
-    { name: "The Big Sad", selected: false },
-    { name: "Thing3", selected: false },
-    { name: "Thing4", selected: false },
-    { name: "Thing4", selected: false },
-    { name: "Thing4", selected: false },
-    { name: "Thing4", selected: false },
-    { name: "Thing4", selected: false },
-    { name: "Thing4", selected: false },
-    { name: "Thing4", selected: false },
-    { name: "Thing4", selected: false }
+    { name: "Time Management", selected: false },
+    { name: "Technology Addictions", selected: false }
   ];
   userPreferences: string[] = [];
   constructor(
@@ -45,9 +37,9 @@ export class IndicatePreferencesComponent {
       (response: any) => {
         if (response && response.result === "Invalid Password/Username") this.error = response.result;
         else if(response.result === "success"){
-          this.wsService.signedIn = true;
+          this.wsService.signedIn = false;
           this.wsService.signingUp = false;
-          this.router.navigateByUrl("/main");
+          this.router.navigateByUrl("/login");
 
         }
         else{

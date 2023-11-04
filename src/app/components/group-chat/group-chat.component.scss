@@ -2,10 +2,10 @@
 @import "../../../styles/variables.scss";
 .gc-body {
 display:flex;
-  flex: auto;
+  flex-direction: column;
   background-color: rgb(38, 38, 38);
   position: relative;
-  height: 100vh;
+  height: calc(100vh);
   padding: 15px 12px;
 }
 .send {
@@ -62,7 +62,7 @@ display:flex;
   padding: 10px;
 }
 .messages {
-  height: calc(100vh - 100px);
+  height: calc(100vh - 182px);
   overflow-y: auto;
 }
 
